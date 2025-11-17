@@ -24,6 +24,7 @@ services:
       INIT_DNS: "1.1.1.1,8.8.8.8"
       INIT_IPV4_CIDR: "10.8.0.0/24"
       INIT_IPV6_CIDR: "fd42:42:42::/64"
+      INSECURE: "true"
     # capabilities to be added to the container
     cap_add:
       - NET_ADMIN
@@ -69,6 +70,9 @@ services:
         - container: INIT_IPV6_CIDR
           description:
             en_us: 'Container Variable: INIT_IPV6_CIDR'
+        - container: INSECURE
+          description:
+            en_us: 'Container Variable: INSECURE'
       volumes:
         - container: /etc/wireguard
           description:
